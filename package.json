@@ -15,8 +15,10 @@
     "test.watch": "jest --watch --no-cache"
   },
   "dependencies": {
+    "@ionic/core": "^0.1.4",
     "@stencil/core": "^0.6.1",
-    "@stencil/router": "latest"
+    "@stencil/router": "latest",
+    "@stencil/sass": "0.0.3"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
