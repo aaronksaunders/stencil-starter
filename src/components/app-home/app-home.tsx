@@ -5,6 +5,7 @@ import { Component } from "@stencil/core";
   styleUrl: "app-home.css"
 })
 export class AppHome {
+  debugger;
   render() {
     return (
       <div class="app-home">

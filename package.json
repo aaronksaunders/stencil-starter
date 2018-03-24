@@ -18,7 +18,8 @@
     "@ionic/core": "^0.1.4",
     "@stencil/core": "^0.6.1",
     "@stencil/router": "latest",
-    "@stencil/sass": "0.0.3"
+    "@stencil/sass": "0.0.3",
+    "rxjs": "^5.5.7"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",

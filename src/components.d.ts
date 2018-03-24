@@ -6,6 +6,7 @@
 
 import {
   MatchResults,
+  RouterHistory,
 } from '@stencil/router';
 
 declare global {
@@ -42,6 +43,36 @@ declare global {
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
       
+    }
+  }
+}
+
+
+import {
+  AppLogin as AppLogin
+} from './components/app-login/app-login';
+
+declare global {
+  interface HTMLAppLoginElement extends AppLogin, HTMLStencilElement {
+  }
+  var HTMLAppLoginElement: {
+    prototype: HTMLAppLoginElement;
+    new (): HTMLAppLoginElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-login": HTMLAppLoginElement;
+  }
+  interface ElementTagNameMap {
+    "app-login": HTMLAppLoginElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-login": JSXElements.AppLoginAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppLoginAttributes extends HTMLAttributes {
+      history?: RouterHistory;
     }
   }
 }

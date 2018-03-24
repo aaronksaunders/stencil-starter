@@ -9,6 +9,7 @@ export class AppProfile {
   @Prop() match: MatchResults;
 
   render() {
+    debugger
     if (this.match && this.match.params.name) {
       return (
         <div>
