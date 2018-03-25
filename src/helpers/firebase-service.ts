@@ -1,32 +1,51 @@
 class FirebaseService {
-  constructor() {
-    let value = localStorage.getItem("USER") || null;
-    if (value) {
-      this.user = JSON.parse(value);
-    } else {
-      this.user = null;
-    }
-  }
   user: any;
+
+  constructor() {}
+
+  authCheck = () => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        let value = localStorage.getItem("USER") || null;
+        if (value) {
+          this.user = JSON.parse(value);
+        } else {
+          this.user = null;
+        }
+
+        resolve(this.user);
+      }, 1000);
+    });
+  };
+
   login = ({ email, password }): Promise<any> => {
-    if (email && password) {
-      this.user = { email };
-      localStorage.setItem("USER", JSON.stringify(this.user));
-      return Promise.resolve(this.user);
-    } else {
-      localStorage.removeItem("USER");
-      return Promise.resolve({ error: "invalid user" });
-    }
+    return new Promise(resolve => {
+      if (email && password) {
+        this.user = { email };
+        localStorage.setItem("USER", JSON.stringify(this.user));
+        setTimeout(() => {
+          return resolve(this.user);
+        }, 1000);
+      } else {
+        localStorage.removeItem("USER");
+        setTimeout(() => {
+          return resolve({ error: "invalid user" });
+        }, 1000);
+      }
+    });
   };
 
   logout = () => {
-    localStorage.removeItem("USER");
-    return Promise.resolve({});
+    return new Promise(resolve => {
+      localStorage.removeItem("USER");
+      setTimeout(() => {
+        this.user = null;
+        return resolve(null);
+      }, 1000);
+    });
   };
 
-  getUser = () => {
-    return this.user;
-  };
+  getUser = () => this.user;
 }
 
 export const firebaseAPI = new FirebaseService();

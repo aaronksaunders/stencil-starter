@@ -42,7 +42,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
-      
+      history?: RouterHistory;
     }
   }
 }
