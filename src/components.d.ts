@@ -137,4 +137,34 @@ declare global {
   }
 }
 
+
+import {
+  TodoListComponent as TodoListComponent
+} from './components/todo-list/todo-list';
+
+declare global {
+  interface HTMLTodoListComponentElement extends TodoListComponent, HTMLStencilElement {
+  }
+  var HTMLTodoListComponentElement: {
+    prototype: HTMLTodoListComponentElement;
+    new (): HTMLTodoListComponentElement;
+  };
+  interface HTMLElementTagNameMap {
+    "todo-list-component": HTMLTodoListComponentElement;
+  }
+  interface ElementTagNameMap {
+    "todo-list-component": HTMLTodoListComponentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "todo-list-component": JSXElements.TodoListComponentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface TodoListComponentAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }

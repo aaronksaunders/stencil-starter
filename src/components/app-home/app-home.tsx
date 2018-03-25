@@ -1,7 +1,8 @@
 import { Component, Prop, State } from "@stencil/core";
 import { Store, Action } from "@stencil/redux";
-import * as fromActions from "../../store/actions/index";
+import * as fromActions from "../../store/actions";
 import { RouterHistory } from "@stencil/router";
+//import { TodoListComponent } from "../todo-list/todo-list"
 
 @Component({
   tag: "app-home",
@@ -26,7 +27,7 @@ export class AppHome {
     // locally
     this.store.mapStateToProps(this, state => {
       return {
-        user : state.user
+        user: state.authStore.user
       };
     });
 
@@ -55,17 +56,20 @@ export class AppHome {
       <ion-page class="show-page">
         <ion-header md-height="56px">
           <ion-toolbar color="primary">
-            <ion-title>HOME</ion-title>
+            <ion-title>StencilJS Sample App</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content padding>
-          <p padding>
-            Welcome to the Stencil App Starter. You can use this starter to
-            build entire apps all with web components using Stencil! Check out
+          <p >
+            Welcome to the Stencil App Starter. Check out
             our docs on <a href="https://stenciljs.com">stenciljs.com</a> to get
-            started.
+            started.<br /><br />
+            We have integrated <a href="https://github.com/ionic-team/stencil-redux">stencil-redux</a> into the sample also<br /><br />
+            <div>Logged In User from Auth Store: <strong>{this.user.email}</strong></div>
           </p>
-          <h3>{this.user.email}</h3>
+
+          <todo-list-component></todo-list-component>
+          <div style={{ marginTop: "20px" }} />
           <stencil-route-link url="/profile/stencil">
             <ion-button>Profile page</ion-button>
           </stencil-route-link>

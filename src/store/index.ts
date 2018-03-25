@@ -3,6 +3,9 @@ import thunkMiddleware from "redux-thunk";
 import logger from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
 
+import todoStore from './todo-store'
+import { combineReducers } from "redux";
+
 let initialState = {
   appName: "Aaron's Test App",
   isPending: false,
@@ -10,8 +13,7 @@ let initialState = {
 };
 
 const reducer = (state = {}, action) => {
-  console.log("reducer:state", state );
-  console.log("action:action", action );
+
   switch (action.type) {
     case "SET_APP_NAME": {
       return { ...state, appName: action.appName };
@@ -54,7 +56,7 @@ const composeEnhancers = composeWithDevTools({
 });
 
 const store = createStore(
-  reducer,
+  combineReducers({ authStore: reducer, todoStore }),
   initialState,
   composeEnhancers(applyMiddleware(thunkMiddleware, logger))
 );

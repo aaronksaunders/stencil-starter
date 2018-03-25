@@ -1,6 +1,6 @@
 const sass = require("@stencil/sass");
 exports.config = {
-  plugins: [sass()]
+  plugins: [sass()],
 };
 
 exports.devServer = {
