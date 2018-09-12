@@ -50,7 +50,7 @@ export class TodoListComponent {
                                 (this.todoEntry.description = event.target.value)
                             } ></ion-input>
                     </ion-label>
-                    <ion-button size="small" onClick={()=> this.doAddTodo(this.todoEntry)}>ADD</ion-button>
+                    <ion-button size="small" onClick={() => this.doAddTodo(this.todoEntry)}>ADD</ion-button>
                 </ion-card>
 
                 <ion-item>
