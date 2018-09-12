@@ -15,16 +15,16 @@
     "test.watch": "jest --watch --no-cache"
   },
   "dependencies": {
-    "@ionic/core": "^0.1.6",
-    "@stencil/core": "^0.6.18",
+    "@ionic/core": "4.0.0-beta.8",
+    "@stencil/core": "0.12.4",
     "@stencil/redux": "0.0.4",
-    "@stencil/router": "^0.2.6",
-    "@stencil/sass": "0.0.3",
-    "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
-    "redux-promise-middleware": "^5.1.1",
+    "@stencil/router": "0.2.6",
+    "@stencil/sass": "0.1.0",
+    "redux": "4.0.0",
+    "redux-logger": "3.0.6",
+    "redux-promise-middleware": "5.1.1",
     "redux-thunk": "^2.3.0",
-    "rxjs": "^5.5.12"
+    "rxjs": "6.3.2"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
